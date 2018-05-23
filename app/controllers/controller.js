@@ -1,4 +1,6 @@
-const Table = require('../models/table.model.js');
+// module that holds the create, delete, and update table methods.
+
+const Table = require('../models/model.js');
 
 // create and save a new table
 exports.create = (req, res) => {
