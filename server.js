@@ -11,12 +11,8 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-//making it possible to use put and delete requests
-var methodOverride = require('method-override')
-app.use(methodOverride('_method'));
-
 // configure database
-const db = "mongodb://localhost:27017/table_api"
+const db = process.env.MONGOLAB_URI;
 
 // connect to the database
 mongoose.connect(db, function(err, res) {
@@ -30,7 +26,7 @@ mongoose.connect(db, function(err, res) {
 // Require routes
 require('./app/routes/routes.js')(app);
 
-// get request, renders index.html 
+// get request, renders index.html
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
