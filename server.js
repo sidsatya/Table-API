@@ -8,8 +8,12 @@ const express = require('express');
 const app = express();
 
 // parse json and x-www-form-urlencoded requests
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+
+//making it possible to use put and delete requests
+var methodOverride = require('method-override')
+app.use(methodOverride('_method'));
 
 // configure database
 const db = "mongodb://localhost:27017/table_api"
@@ -25,6 +29,11 @@ mongoose.connect(db, function(err, res) {
 
 // Require routes
 require('./app/routes/routes.js')(app);
+
+// get request, renders index.html 
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + "/index.html");
+});
 
 // listen for requests
 app.listen(3000, function() {
