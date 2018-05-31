@@ -7,34 +7,42 @@
     <body>
         <h1>Table API</h1>
         <form method="post" action="/">
-            <label>Create a New Table</label><br>
+            <label>Create a New Table Entry</label><br>
             <input type="text" name="title" placeholder="Enter title..." required>
             <input type="text" name="content" placeholder="Enter content..." required>
-            <input type="submit" value="Add Table">
+            <input type="submit" value="Add Entry">
         </form>
         <br>
         <form action="update" method="post">
-            <label>Update a Table</label><br>
-            <input type="text" name="tableId" placeholder="Enter the tableId..." required>
+            <label>Update a Table Entry</label><br>
+            <input type="text" name="entryId" placeholder="Enter the entryId..." required>
             <input type="text" name="title" placeholder="Enter new title..." required>
             <input type="text" name ="content" placeholder="Enter new content..." required>
-            <input type="submit" value="Update Table">
+            <input type="submit" value="Update Entry">
         </form>
         <br>
         <form action="deleteOne" method="post">
-            <label>Delete a Table</label><br>
-            <input type="text" name="tableId" placeholder="Enter the tableId..." required>
-            <input type="submit" value="Delete Table">
+            <label>Delete a Table Entry</label><br>
+            <input type="text" name="entryId" placeholder="Enter the entryId..." required>
+            <input type="submit" value="Delete Entry">
         </form>
         <br>
         <form action="deleteAll" method="post">
-            <label>Delete all Tables</label><br>
-            <input type="submit" value="Delete all Tables">
+            <label>Delete all Table Entries</label><br>
+            <input type="submit" value="Delete all Entries">
         </form>
         <br>
         <form method="get" action="/show">
-            <label>Show all Tables</label><br>
-            <input type="submit" value="Show Tables">
+            <label>Show all Table Entries</label><br>
+            <input type="submit" value="Show Entries">
         </form>
+        <br>
+        <!--
+        <form action="/query" method="post">
+            <label>See all Documents in the Collection that Contain a Query String</label><br>
+            <input type="text" name="query" placeholder="Enter the query string..." required>
+            <input type="submit" value="Submit Query">
+        </form>
+    -->
     </body>
 </html>

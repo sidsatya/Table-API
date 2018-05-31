@@ -1,29 +1,33 @@
 // defines the routes for the different create, read, and update table requests
 // to the server and forwards them to the appropriate controller functions.
-module.exports = (app) => {
-    const tables = require('../controllers/controller.js');
 
-    // create a new table
-    app.post("/", (req, res) => {  //testing
-        tables.create(req, res);
+module.exports = (app) => {
+    const entries = require('../controllers/controller.js');
+
+    // create a new entry
+    app.post("/", (req, res) => {
+        entries.create(req, res);
     });
 
-    // update a table given an existing tableId -- HTML
+    // update an entry given an existing entryId -- HTML
     app.post("/update", (req, res) => {
-        tables.update(req, res);
+        entries.update(req, res);
     })
 
-    // delete a talbe given an existing tableId -- HTML
+    // delete an entry given an existing entryId -- HTML
     app.post("/deleteOne", (req, res) => {
-        tables.delete(req, res);
+        entries.delete(req, res);
     });
 
-    // delete all tables in the collection
-    app.post('/deleteAll', tables.deleteAll);
+    // delete all entries in the table
+    app.post('/deleteAll', entries.deleteAll);
 
-    // show all tables in the collection
-    app.get('/show', tables.show);
+    // show all entries in the table
+    app.get('/show', entries.show);
 
+    app.post('/query', (req, res) => {
+        entries.query(req, res);
+    });
     /*
     // update a table given an existing tableId
     app.put("/", (req, res) => {
