@@ -1,5 +1,5 @@
 <b>Description:</b>
-A basic API using Node.js and MongoDB that supports creating, deleting, and updating entries within a table in MongoDB. Also supports deleting all entries, showing all entries, and querying entries by title and content. A "table" is equivalent to a MongoDB collection and an "entry" is a MongoDB document. 
+A basic API using Node.js and MongoDB that supports creating, deleting, and updating entries within a table in MongoDB. Also supports deleting all entries, showing all entries, and querying entries by title and content. A "table" is equivalent to a MongoDB collection and an "entry" is a MongoDB document.
 
 Demo the code at: https://rocky-island-21176.herokuapp.com/.
 
@@ -11,4 +11,6 @@ Demo the code at: https://rocky-island-21176.herokuapp.com/.
 
 3. app/routes/routes.js - defines the routes for the supported requests to the server and forwards them to the appropriate controller functions.
 
-4. app/controllers/controller.js - module that holds the create, delete, and update table methods.
+4. app/controllers/controller.js - module that holds the create, delete, and update table methods as well as additional methods.
+
+5. index.html 
