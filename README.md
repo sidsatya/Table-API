@@ -1,5 +1,7 @@
 <b>Description:</b>
-A basic API using Node.js and MongoDB that supports creating, deleting, and updating entries within a table in MongoDB. A "table" is equivalent to a MongoDB collection and an "entry" is a MongoDB document.
+A basic API using Node.js and MongoDB that supports creating, deleting, and updating entries within a table in MongoDB. Also supports deleting all entries, showing all entries, and querying entries by title and content. A "table" is equivalent to a MongoDB collection and an "entry" is a MongoDB document. 
+
+Demo the code at: https://rocky-island-21176.herokuapp.com/.
 
 <b>Files:</b>
 
