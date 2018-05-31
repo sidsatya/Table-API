@@ -1,6 +1,7 @@
 // module that holds the create, delete, and update table methods.
 // also holds methods for showing all entries, deleting a single entry,
-// and deleting all entries from the table.
+// deleting all entries from the table, and querying the table entries
+// by title and content. 
 
 const Table = require('../models/model.js');
 
@@ -97,7 +98,24 @@ exports.show = (req, res) => {
     });
 };
 
-// query a specific string -- not fully implemented yet
-exports.query = (req, res) => {
-    Table.find({"$title": { "$content": req.body.query }});
+// returns all entries whose titles contain a queryString
+exports.queryTitle = (req, res) => {
+    var query = { title : new RegExp(req.body.query) };
+
+    Table.find(query, function(err, items) {
+        res.write("The entries whose titles contain the queried string are: ");
+        res.write(JSON.stringify(items, null, 2));
+        res.end();
+    });
+};
+
+// returns all entries whose content contain a queryString
+exports.queryContent = (req, res) => {
+    var query = { content : new RegExp(req.body.query) };
+
+    Table.find(query, function(err, items) {
+        res.write("The entries whose content contain the queried string are: ");
+        res.write(JSON.stringify(items, null, 2));
+        res.end();
+    });
 };

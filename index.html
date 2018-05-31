@@ -37,12 +37,17 @@
             <input type="submit" value="Show Entries">
         </form>
         <br>
-        <!--
-        <form action="/query" method="post">
-            <label>See all Documents in the Collection that Contain a Query String</label><br>
+        <form action="/queryTitle" method="post">
+            <label>Find all Entries Whose Titles Contain a Query String</label><br>
             <input type="text" name="query" placeholder="Enter the query string..." required>
             <input type="submit" value="Submit Query">
         </form>
-    -->
+        <br>
+        <form action="/queryContent" method="post">
+            <label>Find all Entries Whose Content Contain a Query String</label><br>
+            <input type="text" name="query" placeholder="Enter the query string..." required>
+            <input type="submit" value="Submit Query">
+        </form>
+
     </body>
 </html>

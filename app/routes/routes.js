@@ -25,9 +25,14 @@ module.exports = (app) => {
     // show all entries in the table
     app.get('/show', entries.show);
 
-    app.post('/query', (req, res) => {
-        entries.query(req, res);
+    app.post('/queryTitle', (req, res) => {
+        entries.queryTitle(req, res);
     });
+
+    app.post('/queryContent', (req, res) => {
+        entries.queryContent(req, res); 
+    });
+
     /*
     // update a table given an existing tableId
     app.put("/", (req, res) => {
